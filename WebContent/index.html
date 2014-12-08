@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>    
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+    <style type="text/css">
+      body, html { font-family:helvetica,arial,sans-serif; font-size:90%; }
+    </style>
+    <script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.2/dojo/dojo.js"
+            data-dojo-config="async: true"></script>
+    <script type="text/javascript">
+      dojo.require("dijit.form.Form");
+      dojo.require("dijit.form.Button");
+      dojo.require("dijit.form.ValidationTextBox");
+      dojo.require("dijit.form.CheckBox");
+      dojo.addOnLoad(function() {
+          var myForm = dijit.byId("myForm");
+          dojo.connect(myForm, "onSubmit", function(e) {
+              if (myForm.validate()){
+            	  return true;
+              }
+              return false;
+          });
+      });
+    </script>
+    <link rel="stylesheet" type="text/css" href=
+    "http://ajax.googleapis.com/
+    ajax/libs/dojo/1.6/dijit/themes/claro/claro.css" />
+  </head>    
+    <body class="claro">
+      <h3>Dados para cálculo do lucro</h3>
+    	<div dojoType="dijit.form.Form" id="myForm" 
+        jsId="myForm" action="MyServlet" method="POST">
+    	  <table>
+    	    <tr>
+    	      <td></td>
+    	      <td><label>Vendas</label></td>
+    	      <td><label>Gastos</label></td>
+    	    </tr>
+    	    <tr>
+    	      <td><label>Janeiro:</label></td>
+    	      <td><input dojoType="dijit.form.ValidationTextBox" 
+               type="text" name="jan_sales" id="jan_sales" 
+               required="true"></td>                   
+    	      <td><input dojoType="dijit.form.ValidationTextBox" 
+               type="text" name="jan_outlay" id="jan_outlay" 
+               required="true"></td>
+    	    </tr>
+    	    <tr>
+    	      <td><label>Fevereiro:</label></td>
+    	      <td><input dojoType="dijit.form.ValidationTextBox" 
+              type="text" name="feb_sales" id="feb_sales" 
+              required="true"></td>                   
+    	      <td><input dojoType="dijit.form.ValidationTextBox" 
+              type="text" name="feb_outlay" id="feb_outlay" 
+              required="true"></td>
+    	    </tr>
+    	    <tr>
+    	      <td><label>Março:</label></td>
+    	      <td><input dojoType="dijit.form.ValidationTextBox"
+              type="text" name="mar_sales" id="mar_sales" 
+              required="true"></td>                   
+    	      <td><input dojoType="dijit.form.ValidationTextBox" 
+              type="text" name="mar_outlay" id="mar_outlay" 
+              required="true"></td>
+    	    </tr>
+    	    <tr>
+    	      <td><label>Abril:</label></td>
+    	      <td><input dojoType="dijit.form.ValidationTextBox" 
+              type="text" name="apr_sales" id="apr_sales" 
+              required="true"></td>                   
+    	      <td><input dojoType="dijit.form.ValidationTextBox" 
+              type="text" name="apr_outlay" id="apr_outlay" 
+              required="true"></td>
+    	    </tr>
+    	    <tr>
+    	      <td><label>Maio:</label></td>
+    	      <td><input dojoType="dijit.form.ValidationTextBox" 
+              type="text" name="may_sales" id="may_sales" 
+              required="true"></td>                   
+    	      <td><input dojoType="dijit.form.ValidationTextBox" 
+              type="text" name="may_outlay" id="may_outlay" 
+              required="true"></td>
+    	    </tr>
+    	    <tr>
+    	      <td><label>Gráfico/Grid:</label></td>
+    	      <td colspan="2">
+    	        <input type="radio" dojoType="dijit.form.RadioButton" 
+                 name="type" id="pie" checked value="pie" />
+               <label>Pizza</label>
+    	        <input type="radio" dojoType="dijit.form.RadioButton" 
+                 name="type" id="columns" value="columns" />
+               <label>Colunas</label>
+    	        <input type="radio" dojoType="dijit.form.RadioButton" 
+                 name="type" id="grid" value="grid" />
+               <label>Grid</label>
+    	      </td>
+    	    </tr>
+    	    <tr>
+    	      <td align="center" colspan="2">
+    	        <button dojoType="dijit.form.Button" type="submit">
+                Visualizar Lucros</button>
+               <button dojoType="dijit.form.Button" type="reset">
+                Limpar</button>
+    	      </td>
+    	    </tr>
+    	  </table>
+    	</div>        
+    </body>
+</html>

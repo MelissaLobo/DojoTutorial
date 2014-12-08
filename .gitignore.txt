@@ -1,0 +1,8 @@
+target
+dojox
+dojo
+dijit
+.externalToolBuilders
+.settings
+.classpath
+.project
